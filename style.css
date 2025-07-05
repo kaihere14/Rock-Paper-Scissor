@@ -1,0 +1,100 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+@font-face {
+    font-family: 'steph';
+    src: url(/fonts/steph-font-bold.ttf);
+}
+.heading{
+    padding-top: 70px;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'steph';
+    color: #D17B0F;
+}
+.main{
+    height: 100vh;
+    width: 100%;
+    background-image: url(/images/Zoom\ Virtual\ Backgrounds\ _\ Backdrop\ _\ Home\ Office\ _\ Mountains\ _\ Home\ Office\ Background\ _\ Google\ Meet\ _\ Facebook\ _\ Microsoft\ Teams\ _\ WebEx.jpeg);
+    background-size: cover;
+}
+.container{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 1rem;
+}
+.img{
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #D17B0F;
+    font-size: 2.5rem;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 12px 12px 2px 1px rgba(109, 131, 105, 0.3);
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:  0.2s ease-in;
+    cursor: pointer;
+}
+.img:hover{
+    transform: scale(1.05);
+}
+.result{
+    margin-top: 150px;
+    text-align: center;
+    font-family: 'steph';
+    font-size: 3rem;
+    color: #0dff00;
+}
+.hide{
+    display: none;
+}
+.new{
+    margin-top: 100px;
+    text-align: center;
+}
+.new button{
+    font-family: 'steph';
+    font-size: 1.5rem;
+    background-color: rgba(209, 123, 15,0.7);
+    height: 3rem;
+    width: auto;
+    border-radius: 10px;
+    color: white;
+}
+
+@media (max-width : 485px){
+    h1{
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .result{
+        font-size: 2.5rem;
+    }
+    .new{
+        margin-top: 110px;
+    }
+}
+@media (max-width: 350px) {
+    .img {
+        width: 8rem;
+        height: 8rem;
+        font-size: 2rem;
+    }
+
+    .heading h1 {
+        font-size: 2.2rem;
+    }
+
+    .result {
+        font-size: 2rem;
+    }
+}
