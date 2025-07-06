@@ -20,6 +20,7 @@ let compcount = 0;
 rock.addEventListener("click", () => {
   userinput = 0;
   if (wininput == 2) {
+    result.style.color = "Green"
     result.innerText = "you won, computer chose : scisior";
     wininput = secureRandom(3);
     usercount++;
@@ -27,7 +28,9 @@ rock.addEventListener("click", () => {
   } else if (wininput == userinput) {
     result.innerText = "its a draw";
     wininput = secureRandom(3);
+    result.style.color = "#0dff00"
   } else {
+    result.style.color = "red"
     result.innerText = "you lost, computer chose : paper";
     wininput = secureRandom(3);
     compcount++;
@@ -37,14 +40,17 @@ rock.addEventListener("click", () => {
 paper.addEventListener("click", () => {
   userinput = 1;
   if (wininput == 0) {
+    result.style.color = "Green"
     result.innerText = "you won, computer chose : rock";
     wininput = secureRandom(3);
     usercount++;
     ycount.innerText = "you : " + usercount;
   } else if (wininput == userinput) {
     result.innerText = "its a draw";
+    result.style.color = "#0dff00"
     wininput = secureRandom(3);
   } else {
+    result.style.color = "red"
     result.innerText = "you lost, computer chose : scissor";
     wininput = secureRandom(3);
     compcount++;
@@ -54,14 +60,17 @@ paper.addEventListener("click", () => {
 scisior.addEventListener("click", () => {
   userinput = 2;
   if (wininput == 1) {
+    result.style.color = "Green"
     result.innerText = "you won, computer chose : paper";
     wininput = secureRandom(3);
     usercount++;
     ycount.innerText = "you : " + usercount;
   } else if (wininput == userinput) {
     result.innerText = "its a draw";
+    result.style.color = "#0dff00"
     wininput = secureRandom(3);
   } else {
+    result.style.color = "red"
     result.innerText = "you lost, computer chose : rock";
     wininput = secureRandom(3);
     compcount++;
