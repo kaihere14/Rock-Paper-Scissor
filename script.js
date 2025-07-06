@@ -1,92 +1,78 @@
 let rock = document.querySelector(".i1");
 let paper = document.querySelector(".i2");
 let scisior = document.querySelector(".i3");
-let result = document.querySelector('.result')
-let container = document.querySelector('.container')
+let result = document.querySelector(".result");
+let ycount = document.querySelector(".you");
+let ccount = document.querySelector(".comp");
 let button = document.querySelector('.new')
-
-
 function secureRandom(max) {
-    const array = new Uint32Array(1);
-    window.crypto.getRandomValues(array);
-    return array[0] % max;
+  const array = new Uint32Array(1);
+  window.crypto.getRandomValues(array);
+  return array[0] % max;
 }
 
 let userinput = 4;
 wininput = secureRandom(3);
 
-console.log(wininput)
+let usercount = 0;
+let compcount = 0;
 
-rock.addEventListener('click', ()=>{
-    userinput = 0;
-    if(wininput==2){
-        result.classList.remove('hide');
-        button.classList.remove('hide');
-        result.innerText = "you won, computer chose : scisior";
-        wininput = secureRandom(3);
-        container.classList.add('hide')
-    }else if(wininput==userinput){
-        button.classList.remove('hide');
-        result.classList.remove('hide');
-        result.innerText = "its a draw";
-        container.classList.add('hide')
-        wininput = secureRandom(3);
-    }else{
-        button.classList.remove('hide');
-        result.classList.remove('hide');
-        result.innerText = "you lost, computer chose : paper";
-        container.classList.add('hide')
-        wininput = secureRandom(3);
-    }
-})
-paper.addEventListener('click', ()=>{
-    userinput = 1;
-    if(wininput==0){
-        button.classList.remove('hide');
-        result.classList.remove('hide');
-        result.innerText = "you won, computer chose : rock";
-        wininput = secureRandom(3);
-        container.classList.add('hide')
-    }else if(wininput==userinput){
-        button.classList.remove('hide');
-        result.classList.remove('hide');
-        result.innerText = "its a draw";
-        container.classList.add('hide')
-        wininput = secureRandom(3);
-    }else{
-        button.classList.remove('hide');
-        result.classList.remove('hide');
-        result.innerText = "you lost, computer chose : scissor";
-        wininput = secureRandom(3);
-        container.classList.add('hide')
-    }
-})
-scisior.addEventListener('click', ()=>{
-    userinput = 2;
-    if(wininput==1){
-        button.classList.remove('hide');
-        result.classList.remove('hide');
-        container.classList.add('hide')
-        result.innerText = "you won, computer chose : paper";
-        wininput = secureRandom(3);
-    }else if(wininput==userinput){
-        button.classList.remove('hide');
-        container.classList.add('hide')
-        result.classList.remove('hide');
-        result.innerText = "its a draw";
-        wininput = secureRandom(3);
-    
-    }else{
-        button.classList.remove('hide');
-        container.classList.add('hide')
-        result.classList.remove('hide');
-        result.innerText = "you lost, computer chose : rock";
-        wininput = secureRandom(3);
-    }
-})
+rock.addEventListener("click", () => {
+  userinput = 0;
+  if (wininput == 2) {
+    result.innerText = "you won, computer chose : scisior";
+    wininput = secureRandom(3);
+    usercount++;
+    ycount.innerText = "You : " + usercount;
+  } else if (wininput == userinput) {
+    result.innerText = "its a draw";
+    wininput = secureRandom(3);
+  } else {
+    result.innerText = "you lost, computer chose : paper";
+    wininput = secureRandom(3);
+    compcount++;
+    ccount.innerText = "Comp : " + compcount;
+  }
+});
+paper.addEventListener("click", () => {
+  userinput = 1;
+  if (wininput == 0) {
+    result.innerText = "you won, computer chose : rock";
+    wininput = secureRandom(3);
+    usercount++;
+    ycount.innerText = "you : " + usercount;
+  } else if (wininput == userinput) {
+    result.innerText = "its a draw";
+    wininput = secureRandom(3);
+  } else {
+    result.innerText = "you lost, computer chose : scissor";
+    wininput = secureRandom(3);
+    compcount++;
+    ccount.innerText = "Comp : " + compcount;
+  } 
+});
+scisior.addEventListener("click", () => {
+  userinput = 2;
+  if (wininput == 1) {
+    result.innerText = "you won, computer chose : paper";
+    wininput = secureRandom(3);
+    usercount++;
+    ycount.innerText = "you : " + usercount;
+  } else if (wininput == userinput) {
+    result.innerText = "its a draw";
+    wininput = secureRandom(3);
+  } else {
+    result.innerText = "you lost, computer chose : rock";
+    wininput = secureRandom(3);
+    compcount++;
+    ccount.innerText = "Comp : " + compcount;
+  }
+});
 
 button.addEventListener('click',()=>{
-    container.classList.remove('hide')
-    result.classList.add('hide')
-    button.classList.add('hide')
+     result.innerText = "Choose Your Move!";
+    usercount =0;
+    ycount.innerText = "you : " + usercount;
+    compcount=0;
+    ccount.innerText = "Comp : " + compcount;
 })
